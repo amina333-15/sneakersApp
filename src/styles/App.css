@@ -1,0 +1,143 @@
+/* === Logo Animation === */
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* === Header === */
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+/* === Links === */
+.App-link {
+  color: #61dafb;
+}
+
+
+
+.main-content {
+  flex: 3;
+  padding: 20px;
+}
+
+/* === Panier intégré à droite === */
+.cart-sidebar {
+  flex: 1;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-left: 1px solid #ddd;
+  height: 100vh;
+  overflow-y: auto;
+  position: sticky;
+  top: 0;
+}
+
+/* === Panier flottant à droite (alternative) === */
+/*
+.cart {
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  width: 300px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  padding: 20px;
+  z-index: 1000;
+  border-radius: 8px;
+}
+*/
+
+/* === Boutons du panier === */
+.cart-item button,
+.cart-footer button {
+  background-color: #fa2062;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  margin-top: 10px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cart-item button:hover,
+.cart-footer button:hover {
+  background-color: #fc5486;
+}
+
+
+
+
+
+
+/* === Layout: Colonne principale + Panier à droite === */
+.cart{
+  background: linear-gradient(135deg, #FFADDB 5%, #FF5AA2 100%) ;
+  height: 6%;
+  padding: 30px;
+
+  flex-direction: row;
+  align-items: flex-start;
+
+  position: relative;  /* Nécessaire pour le positionnement */
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  border: 1px solid #e5e7eb;
+  width: 100%;
+  height: fit-content;
+
+
+  overflow-y: auto;
+  width: 900px;
+margin: fixed;
+top:125px;
+left : 0px;
+background-color: #ffffff; 
+border-radius: 10px;
+margin-left: 15px; /* marge ext. gauche pour ne pas coller à l'article */ 
+margin-bottom: 15px; /* marge ext. gauche pour ne pas coller à l'article */ 
+
+padding: 10px; /* marge intérieure pour le texte */
+}
+
+.cart-item{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 30px 50px;  /* padding pour l'espace */
+  margin: 0 auto;
+  justify-items: center;  /* Centre les items dans leurs cellules */
+}
+
+
+.cart-item img{
+  width: 80%;  /* Réduit de 100% à 80% */
+  height: 140px;  /* Réduit de 160px à 140px */
+  border-radius: 8px;
+  margin: 0 auto 12px auto;  /* Centre l'image */
+  object-fit: cover;  /* Pour que l'image garde ses proportions */
+  display: block;
+}

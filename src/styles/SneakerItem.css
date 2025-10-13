@@ -1,0 +1,147 @@
+/* Style pour le container de la shopping list */
+.shopping-list {
+  background: #f8fafc;
+  min-height: 100vh;
+  padding: 20px 0;
+}
+
+.shopping-list h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #1f2937;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+/* Grille pour 3 sneakers par ligne avec espacement visible */
+.sneakers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;  /* Espacement entre les items */
+  padding: 30px 50px;  /* padding pour l'espace */
+  max-width: 1400px;
+  margin: 0 auto;
+  justify-items: center;  /* Centre les items dans leurs cellules */
+}
+
+/* Force l'espacement en ajustant la largeur des items */
+.sneakers-grid .sneaker-item {
+  max-width: 350px;  /* Largeur maximale pour créer de l'espace */
+  width: 100%;
+}
+
+/* Responsive : 2 colonnes sur tablette */
+@media (max-width: 1024px) {
+  .sneakers-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;  /* Espacement maintenu sur tablette */
+  }
+}
+
+.sneaker-item {
+  position: relative;  /* Nécessaire pour le positionnement du badge */
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 15px;  /* Réduit de 20px à 15px */
+  transition: all 0.3s ease;
+  border: 1px solid #e5e7eb;
+  width: 100%;
+  height: fit-content;
+  box-sizing: border-box;
+}
+
+.sneaker-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Style pour les images de sneakers */
+.sneaker-image {
+  width: 80%;  /* Réduit de 100% à 80% */
+  height: 140px;  /* Réduit de 160px à 140px */
+  border-radius: 8px;
+  margin: 0 auto 12px auto;  /* Centre l'image */
+  object-fit: cover;  /* Pour que l'image garde ses proportions */
+  display: block;
+}
+
+.sneaker-item h3 {
+  margin: 0 0 8px 0;  
+  font-size: 1.3rem;  
+  color: #1f2937;
+  font-weight: 600;
+}
+
+.sneaker-item p {
+  margin: 6px 0; 
+}
+
+.sneaker-brand {
+  color: #4b5563;
+  font-size: 1rem;
+}
+
+/* Prix en vert */
+.sneaker-price {
+  color: #059669;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+/* Style comme un badge */
+.sneaker-style {
+  background: #f3f4f6;
+  color: #374151;
+  padding: 4px 12px;
+  border-radius: 20px;
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin: 6px 0;  
+}
+
+/* Section des avis */
+.sneaker-review {
+  border-top: 1px solid #bf64d1;
+  padding-top: 12px;  
+  margin-top: 12px;  
+}
+.sneaker-review > div {
+  margin: 6px 0;  
+  display: flex;
+  align-items: left;
+  gap: 8px;
+}
+
+/* Style de base pour chaque sneaker item */
+.best-seller-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: #8d2c96;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+
+.sneaker-item.best-seller {
+  border: 2px solid #FF5AA2;
+  box-shadow: 0 4px 20px #ff5aa26e;
+  transform: translateY(-2px);
+}
+
+/* Hover spécifique pour les best-sellers */
+.sneaker-item.best-seller:hover {
+  transform: translateY(-7px);  
+  box-shadow: 0 8px 25px #ff5aa26e;
+}
+.avis-details{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+}
+
