@@ -1,7 +1,12 @@
 import { useState } from 'react';
-import Banner from '../Components/Banner';
-import ShoppingList from '../Components/ShoppingList';
-import Cart from '../Components/Cart';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+import Banner from './Banner';
+
+import HomePage from './Pages/HomePage';
+import CartPage from './Pages/CartPage';
+import CheckoutPage from './Pages/CheckoutPage';
+
 import '../styles/App.css';
 
 function App() {
@@ -43,13 +48,51 @@ const clearCart = () => {
   setCart([]);
 };
 
+const cartItemsCount = cart.reduce((total, item) => total + item.quantity, 0);
 
   return (
-    <div className='App'>
-      <Banner />
-      <ShoppingList onAddToCart={addToCart}/>
-      <Cart cartItems={cart} onRemoveFromCart={removeFromCart} onClearCart={clearCart} />
-    </div>
+    <BrowserRouter>
+      <div className='App'>
+        <Banner cartItemsCount={cartItemsCount} />
+        <div className='main-content'>
+          <Routes>
+            <Route
+              path='/'
+              element={
+                <HomePage
+                  cart={cart}
+                  addToCart={addToCart}
+                />
+              }
+            />
+            <Route
+              path='/cart'
+              element={
+                  <CartPage
+                      cart={cart}
+                      removeFromCart={removeFromCart}
+                      clearCart={clearCart}
+                  />
+              }
+            />
+            <Route
+                path='/checkout'
+                element={
+                  <CheckoutPage 
+                      cart={cart} 
+                      cartItemsCount={cartItemsCount} 
+                  />
+
+                }
+            />
+          </Routes>
+        </div>
+      </div>
+    </BrowserRouter>
+
+
+
+
   )
 }
 
