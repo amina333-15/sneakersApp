@@ -3,7 +3,7 @@ import ShoppingList from '../../Components/ShoppingList';
 function HomePage({ cart,addToCart }){
     return (
         <div>
-            <ShoppingList addToCart={addToCart} />
+            <ShoppingList onAddToCart={addToCart} />
         </div>
     )
 }

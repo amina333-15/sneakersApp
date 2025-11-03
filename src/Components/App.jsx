@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect} from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Banner from './Banner';
@@ -89,9 +89,6 @@ const cartItemsCount = cart.reduce((total, item) => total + item.quantity, 0);
         </div>
       </div>
     </BrowserRouter>
-
-
-
 
   )
 }

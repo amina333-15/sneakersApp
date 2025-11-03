@@ -6,7 +6,7 @@ function Banner({ cartItemsCount = 0 }) {
     return (
         <header className='banner'>
             <div className='banner-container'>
-
+                {/*-----------------------LOGO--------------------------*/}
                 <div className='banner-brand'>
                     <img src={logo} className='banner-logo' alt='Logo Sneakers' />
 
@@ -17,16 +17,16 @@ function Banner({ cartItemsCount = 0 }) {
                 </div>
             </div>
 
+            {/*---------------------NAVIGATION---------------------*/}
+            <nav className='banner-navigation'>
+                <Link to="/" className='nav-link'>
+                    Catalogue
+                </Link>
 
-<nav className='banner-navigation'>
-    <Link to="/" className='nav-link'>
-        Catalogue
-    </Link>
-
-    <Link to="/cart" className='nav-link'>
-        Panier ({cartItemsCount})
-    </Link>
-</nav>
+                <Link to="/cart" className='nav-link'>
+                    Panier ({cartItemsCount})
+                </Link>
+            </nav>
 
         </header>
     )

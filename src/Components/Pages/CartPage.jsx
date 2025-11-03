@@ -6,8 +6,8 @@ function CartPage({ cart, removeFromCart, clearCart }){
         <div>
             <Cart
                 cartItems={cart}
-                removeFromCart={removeFromCart}
-                clearCart={clearCart}
+                onRemoveFromCart={removeFromCart}
+                onClearCart={clearCart}
             />
 
             {cart.length > 0 && (
