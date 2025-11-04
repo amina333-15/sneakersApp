@@ -1,0 +1,33 @@
+.cart-page {
+  padding: 20px;
+}
+
+.checkout-button-container {
+  text-align: center;
+  color: white;
+  margin-bottom: 30px; /* espace entre le bouton et le panier */
+  z-index: 10;
+  position: relative;
+}
+button {
+  background-color: #fa2062;
+color: white;
+   padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  position: relative;
+  z-index: 10;
+}
+button:hover {
+  background-color: #fc5486;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  position: relative;
+  z-index: 10;
+}
+
