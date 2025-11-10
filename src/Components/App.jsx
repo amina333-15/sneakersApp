@@ -8,6 +8,7 @@ import CartPage from './Pages/CartPage';
 import CheckoutPage from './Pages/CheckoutPage';
 
 import '../styles/App.css';
+import ShippingForm from './Pages/ShippingPage';
 
 function App() {
 
@@ -82,8 +83,15 @@ const cartItemsCount = cart.reduce((total, item) => total + item.quantity, 0);
                       cart={cart} 
                       cartItemsCount={cartItemsCount} 
                   />
+<!--
+                  <Route
+                path='/formulaire'
+                element={
+                  <ShippingForm 
+                      
+                  />
 
-                }
+                }-->
             />
           </Routes>
         </div>
