@@ -24,7 +24,7 @@ function ShippingForm({ onShippingComplete }) {
       giftWrap: false,
       insurance: false
     },
-    specialInstructions: '' // ✅ instructions conditionnelles
+    specialInstructions: '' // ✅ champ conditionnel
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -54,6 +54,7 @@ function ShippingForm({ onShippingComplete }) {
     }
   };
 
+  // Validation du formulaire
   const validateForm = (data) => {
     const errors = {};
 
@@ -87,6 +88,7 @@ function ShippingForm({ onShippingComplete }) {
     return errors;
   };
 
+  // Soumission du formulaire
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -111,6 +113,7 @@ function ShippingForm({ onShippingComplete }) {
     }
   };
 
+  // Message de succès
   if (success) {
     return (
       <div className="success-message">
@@ -120,6 +123,7 @@ function ShippingForm({ onShippingComplete }) {
     );
   }
 
+  // Formulaire principal
   return (
     <div className="shipping-form">
       <h2>Informations de livraison</h2>
@@ -296,67 +300,67 @@ function ShippingForm({ onShippingComplete }) {
               disabled={isSubmitting}
             />
             Emballage cadeau (+5,00€)
-          </label>
+                    </label>
           <label>
             <input
               type="checkbox"
               name="additionalServices.insurance"
               checked={formData.additionalServices.insurance}
               onChange={handleChange}
-          />
-          Assurance transport (+15,00€)
-        </label>
-      </fieldset>
-
-      {/* Instructions spéciales conditionnelles */}
-      {formData.deliveryOptions === 'express' && (
-        <div className="form-group">
-          <label htmlFor="specialInstructions">Instructions spéciales</label>
-          <textarea
-            id="specialInstructions"
-            name="specialInstructions"
-            value={formData.specialInstructions}
-            onChange={handleChange}
-            placeholder="Code d'accès, étage, etc."
-            maxLength={200}
-            disabled={isSubmitting}
-          />
-          <ErrorMessage error={errors.specialInstructions} />
-        </div>
-      )}
-
-      {/* Préférences */}
-      <fieldset>
-        <legend>Préférences</legend>
-        <div className="form-group">
-          <label htmlFor="newsletter">
-            <input
-              id="newsletter"
-              name="newsletter"
-              type="checkbox"
-              checked={formData.newsletter}
-              onChange={handleChange}
               disabled={isSubmitting}
             />
-            S'abonner à notre newsletter
+            Assurance transport (+15,00€)
           </label>
-        </div>
-      </fieldset>
+        </fieldset>
 
-      {/* Erreur générale */}
-      {errors.general && (
-        <div className="error-banner">
-          <ErrorMessage error={errors.general} />
-        </div>
-      )}
+        {formData.deliveryOptions === 'express' && (
+          <div className="form-group">
+            <label htmlFor="specialInstructions">Instructions spéciales</label>
+            <textarea
+              id="specialInstructions"
+              name="specialInstructions"
+              value={formData.specialInstructions}
+              onChange={handleChange}
+              placeholder="Code d'accès, étage, etc."
+              maxLength={200}
+              disabled={isSubmitting}
+            />
+            <ErrorMessage error={errors.specialInstructions} />
+          </div>
+        )}
 
-      {/* Bouton de soumission */}
-      <button type="submit" disabled={isSubmitting}>
-        {isSubmitting ? 'Traitement...' : 'Confirmer la commande'}
-      </button>
-    </form>
-  </div>
-);
+        {/* Préférences */}
+        <fieldset>
+          <legend>Préférences</legend>
+          <div className="form-group">
+            <label htmlFor="newsletter">
+              <input
+                id="newsletter"
+                name="newsletter"
+                type="checkbox"
+                checked={formData.newsletter}
+                onChange={handleChange}
+                disabled={isSubmitting}
+              />
+              S'abonner à notre newsletter
+            </label>
+          </div>
+        </fieldset>
+
+        {/* Erreur générale */}
+        {errors.general && (
+          <div className="error-banner">
+            <ErrorMessage error={errors.general} />
+          </div>
+        )}
+
+        {/* Bouton de soumission */}
+        <button type="submit" disabled={isSubmitting}>
+          {isSubmitting ? 'Traitement...' : 'Confirmer la commande'}
+        </button>
+      </form>
+    </div>
+  );
 }
 
 export default ShippingForm;
