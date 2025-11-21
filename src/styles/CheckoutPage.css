@@ -1,9 +1,73 @@
-.banner {
-display: flex;
-align-items: center;
-justify-content: space-between;
-padding: 5px 40px;
-background: linear-gradient(135deg, #FFADDB 5%, #FF5AA2 100%) ;
-color: white;
-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.checkout-page {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.page-header h2 {
+  font-size: 1.8rem;
+  color: #333;
+}
+
+.back-to-cart {
+  text-decoration: none;
+  color: #FF5AA2;
+  font-weight: bold;
+}
+
+.checkout-content h3 {
+  margin-bottom: 15px;
+  color: #444;
+}
+
+.order-summary {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.order-summary th,
+.order-summary td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+.order-summary th {
+  background: #f9f9f9;
+  font-weight: bold;
+}
+
+.totals {
+  margin-top: 20px;
+  font-size: 1.1rem;
+}
+
+.totals strong {
+  color: #FF5AA2;
+  font-size: 1.2rem;
+}
+
+.go-to-shipping {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #FFADDB 5%, #FF5AA2 100%);
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 6px;
 }
